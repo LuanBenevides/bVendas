@@ -1,4 +1,4 @@
-package bVendas.domain.entity;
+package bVendas.domain.model;
 
 import java.io.Serializable;
 
@@ -61,107 +61,155 @@ public class Empresa implements Serializable{
 	
 	@Column(length = 25)
 	private String complemento;
+	
+	//valor padrão após cadastro
+	private boolean ativo = true;
 
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getCnpj() {
 		return cnpj;
 	}
+
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+
 	public String getRazaoSocial() {
 		return razaoSocial;
 	}
+
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
+
 	public String getNomeFantasia() {
 		return nomeFantasia;
 	}
+
 	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
 	}
+
 	public String getSegmento() {
 		return segmento;
 	}
+
 	public void setSegmento(String segmento) {
 		this.segmento = segmento;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getEmailSecundario() {
 		return emailSecundario;
 	}
+
 	public void setEmailSecundario(String emailSecundario) {
 		this.emailSecundario = emailSecundario;
 	}
+
 	public String getTelefone() {
 		return telefone;
 	}
+
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
 	public String getTelefoneSecundario() {
 		return telefoneSecundario;
 	}
+
 	public void setTelefoneSecundario(String telefoneSecundario) {
 		this.telefoneSecundario = telefoneSecundario;
 	}
+
 	public String getCep() {
 		return cep;
 	}
+
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
 	public String getUf() {
 		return uf;
 	}
+
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
+
 	public String getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
 	public String getBairro() {
 		return bairro;
 	}
+
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
+
 	public String getLogradouro() {
 		return logradouro;
 	}
+
 	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
+
 	public String getNumero() {
 		return numero;
 	}
+
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
+
 	public String getComplemento() {
 		return complemento;
 	}
+
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + (ativo ? 1231 : 1237);
 		result = prime * result + ((bairro == null) ? 0 : bairro.hashCode());
 		result = prime * result + ((cep == null) ? 0 : cep.hashCode());
 		result = prime * result + ((cidade == null) ? 0 : cidade.hashCode());
@@ -180,6 +228,7 @@ public class Empresa implements Serializable{
 		result = prime * result + ((uf == null) ? 0 : uf.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -189,6 +238,8 @@ public class Empresa implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Empresa other = (Empresa) obj;
+		if (ativo != other.ativo)
+			return false;
 		if (bairro == null) {
 			if (other.bairro != null)
 				return false;

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Tabela empresas</title>
+</h:head>
+<h:body>
+
+	<p:dataTable var="empresa" value="#{empresaBean.empresas}">
+		<p:column headerText="CNPJ">
+			<h:outputText value="#{empresa.cnpj}" />
+		</p:column>
+		<p:column headerText="Nome fantasia">
+			<h:outputText value="#{empresa.nomeFantasia}" />
+		</p:column>
+		<p:column headerText="Telefone principal">
+			<h:outputText value="#{empresa.telefone}" />
+		</p:column>
+		<p:column headerText="Ativo">
+			<h:outputLabel value="#{empresa.ativo}"/>
+		</p:column>
+		<p:column headerText="Ações" colspan="2">
+			<p:commandButton value="Consultar"/>
+			<p:commandButton value="Editar"/>
+		</p:column>
+	</p:dataTable>
+</h:body>
+</html>

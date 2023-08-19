@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Home-page</title>
+	<style>
+		.ui-panel {
+			width: 1200px;	
+			margin: 0px auto;
+		}
+		.ui-panel-titlebar {
+			background-color: #104e8b;
+			color: #fff;
+			font-size: 22px;
+		}
+	</style>
+</h:head>
+<h:body>
+	<p:panel header="Cadastro de empresas">
+		<h:form>
+			<p:panelGrid contentStyle="border: none;" columns="4" layout="grid"
+				styleClass="showcase-text-align-center" style="border: none;">
+
+				<p:outputLabel for="cnpj" value="CNPJ: " />
+				<p:inputMask id="cnpj" mask="99.999.999/9999-99"
+					value="#{empresaBean.empresa.cnpj}" maxlength="18" />
+
+				<p:outputLabel for="razaoSocial" value="Razão social: " />
+				<p:inputText id="razaoSocial"
+					value="#{empresaBean.empresa.razaoSocial}" />
+
+				<p:outputLabel for="nomeFantasia" value="Nome Fantasia: " />
+				<p:inputText value="#{empresaBean.empresa.nomeFantasia}"
+					id="nomeFantasia" />
+
+				<p:outputLabel for="segmento" value="Segmento: " />
+				<p:inputText value="#{empresaBean.empresa.segmento}" id="segmento" />
+
+				<p:outputLabel for="email" value="E-mail: " />
+				<p:inputText value="#{empresaBean.empresa.email}" id="email" />
+
+				<p:outputLabel for="emailSecundario" value="E-mail secundário: " />
+				<p:inputText value="#{empresaBean.empresa.emailSecundario}"
+					id="emailSecundario" />
+
+				<p:outputLabel for="telefone" value="Telefone: " />
+				<p:inputMask mask="(99)9 9999-9999" value="#{empresaBean.empresa.telefone}" id="telefone" />
+
+				<p:outputLabel for="telefoneSecundario"
+					value="Telefone secundário: " />
+				<p:inputMask mask="(99)9 9999-9999" value="#{empresaBean.empresa.telefoneSecundario}"
+					id="telefoneSecundario" />
+
+				<p:outputLabel value="CEP: " />
+				<p:inputMask mask="99999-999" for="cep" value="#{empresaBean.empresa.cep}" id="cep" />
+
+				<p:outputLabel for="uf" value="UF: " />
+				<p:inputText value="#{empresaBean.empresa.uf}" id="uf" maxlength="2"/>
+
+				<p:outputLabel for="cidade" value="Cidade: " />
+				<p:inputText value="#{empresaBean.empresa.cidade}" id="cidade" />
+
+				<p:outputLabel for="bairro" value="Bairro: " />
+				<p:inputText value="#{empresaBean.empresa.bairro}" id="bairro" />
+
+				<p:outputLabel for="logradouro" value="Logradouro (Rua): " />
+				<p:inputText value="#{empresaBean.empresa.logradouro}"
+					id="logradouro" />
+
+				<p:outputLabel for="numero" value="Número: " />
+				<p:inputText value="#{empresaBean.empresa.numero}" id="numero" />
+
+				<p:outputLabel for="complemento" value="Complemento: " />
+				<p:inputText value="#{empresaBean.empresa.complemento}"
+					id="complemento" />
+				
+				<p:outputLabel value=" "/>
+				<p:commandButton value="Cadastrar" style="margin-left: 105px; background-color: #104e8b;color: #fff;"
+					action="#{empresaBean.salvarEmpresa}" />
+			</p:panelGrid>
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>
